@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style - Copie.css"/>
+<script type="text/javascript" src="index - Copie.js"></script>
+<title></title> 
+</head>
+<body>
+<form action="mailto:a.mattot@laposte.net" method= "post" enctype="text/plain">
+<fieldset>
+<legend>Formulaire</legend>
+
+<label id="usernamelabel">Nom d'utilisateur :</label>
+<input id="username" name="username" type="text"></input>
+<br>
+<label id="firstnamelabel">Prénom :</label>
+<input id="firstname" name="firstname" type="text"></input>
+<br>
+<label id="adresslabel">Adresse :</label>
+<input id="adress" name="adress" type="text"></input>
+
+<br>
+<label id="civilitylabel">Civilité :</label>
+<input id="monsieur" name="radiobutton" type="radio"><label id="monsieurlabel">M.</label></input><input id="madame" name="radiobutton" type="radio"><label id="madamelabel">Mme.</label></input>
+<br>
+<label id="phonenumberlabel">Numéro de téléphone :</label>
+<input id="phonenumber" name="phonenumber" type="text"></input>
+<br>
+<select id="marque" name="marque" value="Samsung">
+<option>Samsung</option>
+<option>Apple</option>
+<option>Huawei</option>
+<option>Honor</option>
+</select>
+<label id="applabel">Applications que vous souhaitez utilisé :</label>
+<br>
+<div id="android">
+<input id="chrome" type="checkbox" name="apps">Google Chrome</input><input id="firefox" type="checkbox" name="apps">Mozzila Firefox</input><input id="twitter" type="checkbox" name="apps">Twitter</input>
+<br><input id="youtube" type="checkbox" name="apps">Youtube</input><input id="clashofclans" type="checkbox" name="apps">Clash of Clans</input>
+</div>
+<div id="apple">
+<input id="safari" type="checkbox" name="apps">Safari</input><input id="snapchat" type="checkbox" name="apps">Snapchat</input><input id="instagram" type="checkbox" name="apps">Instagram</input>
+<br><input id="facebook" type="checkbox" name="apps">Facebook</input><input id="clashroyale" type="checkbox" name="apps">Clash Royale</input>
+</div>
+<br>
+<input type="submit" id="submit" value="Valider"></input>
+</fieldset>
+</form>
+</body>
+</html>

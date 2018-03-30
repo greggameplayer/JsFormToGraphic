@@ -1,0 +1,80 @@
+#android
+{
+	visibility: visible;
+	
+}
+#apple
+{
+	visibility: visible;
+	
+}
+form
+{
+	width: 40%;
+}
+#usernamelabel
+{
+	position: absolute;
+	top: initial;
+	left: 6vw;
+}
+#username
+{
+	position: absolute;
+	top: initial;
+	left: 15.5vw;
+}
+#firstnamelabel
+{
+	position: relative;
+	top: +2vh;
+	left: +9vw;
+}
+#firstname
+{
+ position: relative;
+ top: +2vh;
+left: +8.9vw;
+}
+#adresslabel
+{
+	position: relative;
+	top: +3vh;
+	left: +8.8vw;
+}
+#adress
+{
+	position: relative;
+	top: +3vh;
+	left: +8.75vw;
+}
+#civilitylabel
+{
+	position: relative;
+	top: +4vh;
+	left: +9.07vw;
+}
+#monsieur
+{
+	position: relative;
+	top: +4.2vh;
+	left: +12vw;
+}
+#monsieurlabel
+{
+	position: relative;
+	top: +4.1vh;
+	left: +9.2vw;
+}
+#madamelabel
+{
+	position: relative;
+	top: +4.1vh;
+	left: +10vw;
+}
+#madame
+{
+	position: relative;
+	top: +4.2vh;
+	left: +14.4vw;
+}
