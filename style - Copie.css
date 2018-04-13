@@ -78,3 +78,70 @@ left: +8.9vw;
 	top: +4.2vh;
 	left: +14.4vw;
 }
+#phonenumberlabel
+{
+	position: relative;
+	top: +4vh;
+	left: +2.07vw;
+}
+#phonenumber
+{
+	position: relative;
+	top: +4vh;
+	left: +2.06vw;
+}
+#marquelabel
+{
+	position: relative;
+	top: +5vh;
+	left: -0.59vw;	
+
+}
+#marque
+{
+	position: relative;
+	top: +5.2vh;
+	left: -0.55vw;
+}
+#applabel
+{
+	display: block;
+	position: relative;
+	top: +5.2vh;
+	left: -0.5vw;	
+}
+#android
+{
+	position: relative;
+	top: +3.2vh;
+	left: -0.5vw;	
+}
+#apple
+{
+	position: relative;
+	top: -1.5vh;
+	left: -0.5vw;
+}
+#submit
+{
+	position: relative;
+	width: 300px;
+	left: calc(50% - (300px/2));
+}
+#graphsexe
+{
+	position:absolute;
+  width:350px;
+	height: 337px;
+	top: 1vh;
+	left: calc(54% - (350px/2));
+}
+#graph
+{
+	position:absolute;
+  width:500px;
+	height: 500px;
+	top: 40vh;
+	left: calc(21% - (500px/2));	
+	
+}
