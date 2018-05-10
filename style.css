@@ -1,3 +1,10 @@
+body
+{
+	background-image: url(Images/fond.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 #android
 {
 	visibility: visible;
@@ -16,111 +23,130 @@ form
 {
 	position: absolute;
 	top: initial;
-	left: 6vw;
+	left: calc(11.05vw - (250px/2));
+	width:250px;
+	
 }
 #username
 {
 	position: absolute;
 	top: initial;
-	left: 15.5vw;
+	width: 150px;
+	left: calc(14.98vw - (150px/2));
 }
 #firstnamelabel
 {
 	position: relative;
 	top: +2vh;
-	left: +9vw;
+	width: 250px;
+	left: calc(13.1vw - (250px/2));
 }
 #firstname
 {
  position: relative;
  top: +2vh;
-left: +8.9vw;
+width: 150px;
+left: calc(10.6vw - (150px/2));
 }
 #adresslabel
 {
 	position: relative;
+	width: 250px;
 	top: +3vh;
-	left: +8.8vw;
+	left: calc(13vw - (250px/2));
 }
 #adress
 {
 	position: relative;
+	width: 150px;
 	top: +3vh;
-	left: +8.75vw;
+	left: calc(10.5vw - (150px/2));
 }
 #civilitylabel
 {
 	position: relative;
+	width: 300px;
 	top: +4vh;
-	left: +9.07vw;
+	left: calc(14.5vw - (300px/2));
 }
 #monsieur
 {
 	position: relative;
+	width: 2.5px;
 	top: +4.2vh;
-	left: +12vw;
+	left: calc(8vw - (2.5px/2));
 }
 #monsieurlabel
 {
 	position: relative;
+	width: 3px;
 	top: +4.1vh;
-	left: +9.2vw;
+	left: calc(6vw - (3px/2));
 }
 #madamelabel
 {
 	position: relative;
+	width: 3px;
 	top: +4.1vh;
-	left: +10vw;
+	left: calc(7vw - (3px/2));
 }
 #madame
 {
 	position: relative;
+	width: 2.5px;
 	top: +4.2vh;
-	left: +14.4vw;
+	left: calc(10vw - (2.5px/2));
 }
 #phonenumberlabel
 {
 	position: relative;
+	width: 300px;
 	top: +4vh;
-	left: +2.07vw;
+	left: calc(9.86vw - (300px/2));
 }
 #phonenumber
 {
 	position: relative;
 	top: +4vh;
-	left: +2.06vw;
+	width: 150px;
+	left: calc(6.1vw - (150px/2));
 }
 #marquelabel
 {
 	position: relative;
+	width: 300px;
 	top: +5vh;
-	left: -0.59vw;	
+	left: calc(8.1vw - (300px/2));	
 
 }
 #marque
 {
 	position: relative;
 	top: +5.2vh;
-	left: -0.55vw;
+	width: 80px;
+	left: calc(2.5vw - (80px/2));
 }
 #applabel
 {
 	display: block;
 	position: relative;
+	width: 260px;
 	top: +5.2vh;
-	left: -0.5vw;	
+	left: calc(6.4vw - (260px/2));	
 }
 #android
 {
 	position: relative;
+	width: 350px;
 	top: +3.2vh;
-	left: -0.5vw;	
+	left: calc(8.5vw - (350px/2));	
 }
 #apple
 {
 	position: relative;
+	width: 350px;
 	top: -1.5vh;
-	left: -0.5vw;
+	left: calc(8.5vw - (350px/2));
 }
 #submit
 {
@@ -131,17 +157,17 @@ left: +8.9vw;
 #graphsexe
 {
 	position:absolute;
-  width:350px;
-	height: 337px;
-	top: 1vh;
-	left: calc(54% - (350px/2));
+  width:500px;
+	height: 500px;
+	top: 44vh;
+	left: calc(21% - (500px/2));	
 }
 #graph
 {
 	position:absolute;
-  width:500px;
-	height: 500px;
-	top: 40vh;
-	left: calc(21% - (500px/2));	
+	width:900px;
+	height: 900px;
+	top: 2vh;
+	left: calc(70% - (900px/2));
 	
 }
