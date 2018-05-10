@@ -1,5 +1,4 @@
-﻿var submitbutton, username, firstname, adress, civility, phonenumber, exterioractivities, boutonactivities, marquelist, marqueselect, marquesmartphone, apps = [], appsindex = 0, compteur = 0, male, female, tab = [], monsieurcounter = 0, madamecounter = 0,
-chromecounter = 0, firefoxcounter = 0, twittercounter = 0, youtubecounter = 0, clashofclanscounter = 0, safaricounter = 0, snapchatcounter = 0, instagramcounter = 0, facebookcounter = 0, clashroyalecounter = 0;
+﻿var submitbutton, username, firstname, adress, civility, phonenumber, marquelist, marqueselect, marquesmartphone, appsindex = 0, compteur = 0, male, female, tab = [], tabcounter = [0,0,0,0,0,0,0,0,0,0,0,0];
 function onLoad()
 {
 	submitbutton = document.getElementById("submit");
@@ -7,100 +6,185 @@ function onLoad()
 	marquelist = document.getElementById("marque");
 	onChangeMarquelist();
 	marquelist.addEventListener("change", onChangeMarquelist);
+	for(var i=0;i<5;i++){
+	randomProfileGeneration();		
+	}
 }
 window.addEventListener("load", onLoad);
+
+function randomProfileGeneration(){
+	var apps = [];
+	tabcounter[12] = Math.floor((Math.random()*2)+1);
+	tabcounter[13] = Math.floor((Math.random()*2)+1);
+	if(tabcounter[12] == 1){
+		civility = "monsieur";
+		tabcounter[0]++;
+	}else if(tabcounter[12] == 2){
+		civility = "madame";
+		tabcounter[1]++;
+	}	
+	if(tabcounter[13] == 1){
+		marquesmartphone = "Samsung";	
+		tabcounter[14] = Math.floor((Math.random()*5)+1);
+		if(tabcounter[14] == 1){
+			apps[0] = "Google Chrome";
+			tabcounter[2]++;
+		}else if(tabcounter[14] == 2){
+			apps[0] = "Mozzila Firefox";
+			tabcounter[3]++;		
+		}else if(tabcounter[14] == 3){
+			apps[0] = "Twitter";
+			tabcounter[4]++;		
+		}else if(tabcounter[14] == 4){
+			apps[0] = "Youtube";
+			tabcounter[5]++;		
+		}else if(tabcounter[14] == 5){
+			apps[0] = "Clash Of Clans";
+			tabcounter[6]++;		
+		}
+	}else if(tabcounter[13] == 2){
+		marquesmartphone = "Apple";	
+		tabcounter[14] = Math.floor((Math.random()*5)+1);
+		if(tabcounter[14] == 1){
+			apps[0] = "Safari";
+			tabcounter[7]++;
+		}else if(tabcounter[14] == 2){
+			apps[0] = "Snapchat";
+			tabcounter[8]++;		
+		}else if(tabcounter[14] == 3){
+			apps[0] = "Instagram";
+			tabcounter[9]++;		
+		}else if(tabcounter[14] == 4){
+			apps[0] = "Facebook";
+			tabcounter[10]++;		
+		}else if(tabcounter[14] == 5){
+			apps[0] = "Clash Royale";
+			tabcounter[11]++;		
+		}	
+	}
+	Stock(compteur,"x","x","x",civility,"03",marquesmartphone,apps); // Profil généré aléatoirement
+}
 
 function onChangeMarquelist(){
 	marqueselect = marquelist.selectedIndex;
 	if(marqueselect == 0){
-	document.getElementById("apple").style.visibility = "hidden";	
-	document.getElementById("android").style.visibility = "visible";
-		
+		document.getElementById("apple").style.visibility = "hidden";	
+		document.getElementById("android").style.visibility = "visible";	
 	}else if(marqueselect == 1){
-	document.getElementById("android").style.visibility = "hidden";	
-	document.getElementById("apple").style.visibility = "visible";
+		document.getElementById("android").style.visibility = "hidden";	
+		document.getElementById("apple").style.visibility = "visible";
 	}else if(marqueselect == 2){
-	document.getElementById("apple").style.visibility = "hidden";	
-	document.getElementById("android").style.visibility = "visible";		
+		document.getElementById("apple").style.visibility = "hidden";	
+		document.getElementById("android").style.visibility = "visible";		
 	}else{
-	document.getElementById("apple").style.visibility = "hidden";	
-	document.getElementById("android").style.visibility = "visible";		
+		document.getElementById("apple").style.visibility = "hidden";	
+		document.getElementById("android").style.visibility = "visible";		
 	}
 	
 }
 
 function onClickSubmitButton()
 {	
+	var appid = [document.getElementById("chrome"), document.getElementById("firefox"), document.getElementById("twitter"), document.getElementById("youtube"), document.getElementById("clashofclans"), document.getElementById("safari")
+, document.getElementById("snapchat"), document.getElementById("instagram"), document.getElementById("facebook"), document.getElementById("clashroyale")];
+	var apps = [];
 	username = document.getElementById("username").value;
+	if(username == "" || username == null){
+		window.alert("Vous n'avez pas entrer de nom d'utilisateur !");
+		return false;
+	}
 	firstname = document.getElementById("firstname").value;
+	if(firstname == "" || firstname == null){
+		window.alert("Vous n'avez pas entrer de Prénom !");
+		return false;
+		
+	}
 	adress = document.getElementById("adress").value;
-	if(document.getElementById("monsieur").checked == true)
-	{
-	civility = "monsieur";
-	monsieurcounter++;
+	if(adress == "" || adress == null){
+		window.alert("Vous n'avez pas entrer d'adresse !");
+		return false;
+	}
+	if(document.getElementById("monsieur").checked == false && document.getElementById("madame").checked == false){
+		window.alert("Vous n'avez pas sélectionner de sexe !");
+		return false;
+	}
+	if(document.getElementById("monsieur").checked == true){
+		civility = "monsieur";
+		tabcounter[0]++;
 	}else{
-	civility = "madame";
-	madamecounter++;
+		civility = "madame";
+		tabcounter[1]++;
 	}
 	phonenumber = document.getElementById("phonenumber").value;
+	phonenumber = phonenumber.replace(/\s+/g, '');
+	if(isNaN(phonenumber) || phonenumber.length != 10){
+		window.alert("le numéro de téléphone entrer n'est pas valide !");
+		return false;
+	}	
 	if(marquelist.selectedIndex == 0){
-	marquesmartphone = "Samsung";	
+		marquesmartphone = "Samsung";	
 	}else if(marquelist.selectedIndex == 1){
-	marquesmartphone = "Apple";	
+		marquesmartphone = "Apple";	
 	}else if(marquelist.selectedIndex == 2){
-	marquesmartphone = "Huawei";	
+		marquesmartphone = "Huawei";	
 	}else{
-	marquesmartphone = "Honor";	
+		marquesmartphone = "Honor";	
 	}
-	if(document.getElementById("chrome").checked == true){
-	apps[appsindex] = "Google Chrome";
-	chromecounter++;
-	appsindex++;
+	appsindex = 0;
+	if(appid[0].checked == false && appid[1].checked == false && appid[2].checked == false && appid[3].checked == false && appid[4].checked == false &&
+	appid[5].checked == false && appid[6].checked == false && appid[7].checked == false && appid[8].checked == false && appid[9].checked == false){
+		window.alert("Vous n'avez choisi aucune application !");
+		return false;
 	}
-	if(document.getElementById("firefox").checked == true){
-	apps[appsindex] = "Mozzila Firefox";
-	firefoxcounter++;
-	appsindex++;		
+	if(appid[0].checked == true){
+		apps[appsindex] = "Google Chrome";
+		tabcounter[2]++;
+		appsindex++;
 	}
-	if(document.getElementById("twitter").checked == true){
-	apps[appsindex] = "Twitter";
-	twittercounter++;
-	appsindex++;				
+	if(appid[1].checked == true){
+		apps[appsindex] = "Mozzila Firefox";
+		tabcounter[3]++;
+		appsindex++;		
 	}
-	if(document.getElementById("youtube").checked == true){
-	apps[appsindex] = "Youtube";
-	youtubecounter++;
-	appsindex++;			
+	if(appid[2].checked == true){
+		apps[appsindex] = "Twitter";
+		tabcounter[4]++;
+		appsindex++;				
 	}
-	if(document.getElementById("clashofclans").checked == true){
-	apps[appsindex] = "Clash Of Clans";	
-	clashofclanscounter++;
-	appsindex++;	
+	if(appid[3].checked == true){
+		apps[appsindex] = "Youtube";
+		tabcounter[5]++;
+		appsindex++;			
 	}
-	if(document.getElementById("safari").checked == true){
-	apps[appsindex] = "Safari";	
-	safaricounter++;
-	appsindex++;				
+	if(appid[4].checked == true){
+		apps[appsindex] = "Clash Of Clans";	
+		tabcounter[6]++;
+		appsindex++;	
 	}
-	if(document.getElementById("snapchat").checked == true){
-	apps[appsindex] = "Snapchat";
-	snapchatcounter++;	
-	appsindex++;				
+	if(appid[5].checked == true){
+		apps[appsindex] = "Safari";	
+		tabcounter[7]++;
+		appsindex++;				
 	}
-	if(document.getElementById("instagram").checked == true){
-	apps[appsindex] = "Instagram";
-	instagramcounter++;
-	appsindex++;				
+	if(appid[6].checked == true){
+		apps[appsindex] = "Snapchat";
+		tabcounter[8]++;	
+		appsindex++;				
 	}
-	if(document.getElementById("facebook").checked == true){
-	apps[appsindex] = "Facebook";	
-	facebook++;
-	appsindex++;				
+	if(appid[7].checked == true){
+		apps[appsindex] = "Instagram";
+		tabcounter[9]++;
+		appsindex++;				
 	}
-	if(document.getElementById("clashroyale").checked == true){
-	apps[appsindex] = "Clash Royale";	
-	clashroyalecounter++;
-	appsindex++;				
+	if(appid[8].checked == true){
+		apps[appsindex] = "Facebook";	
+		tabcounter[10]++;
+		appsindex++;				
+	}
+	if(appid[9].checked == true){
+		apps[appsindex] = "Clash Royale";	
+		tabcounter[11]++;
+		appsindex++;				
 	}
 	
 	Stock(compteur,username,firstname,adress,civility,phonenumber,marquesmartphone,apps);
@@ -132,36 +216,36 @@ function onClickSubmitButton()
         colorByPoint: true,
         data: [{
             name: 'Google Chrome',
-            y: (chromecounter/appsindex)*100,
+            y: (tabcounter[2]/appsindex)*100,
             sliced: true,
             selected: true
         }, {
             name: 'Mozzila Firefox',
-            y: (firefoxcounter/appsindex)*100
+            y: (tabcounter[3]/appsindex)*100
         }, {
             name: 'Twitter',
-            y: (twittercounter/appsindex)*100
+            y: (tabcounter[4]/appsindex)*100
         }, {
             name: 'Youtube',
-            y: (youtubecounter/appsindex)*100
+            y: (tabcounter[5]/appsindex)*100
         }, {
             name: 'Clash of Clans',
-            y: (clashofclanscounter/appsindex)*100
+            y: (tabcounter[6]/appsindex)*100
         }, {
             name: 'Safari',
-            y: (safaricounter/appsindex)*100
+            y: (tabcounter[7]/appsindex)*100
         }, {
             name: 'Snapchat',
-            y: (snapchatcounter/appsindex)*100
+            y: (tabcounter[8]/appsindex)*100
         }, {
             name: 'Instagram',
-            y: (instagramcounter/appsindex)*100
+            y: (tabcounter[9]/appsindex)*100
         }, {
             name: 'Facebook',
-            y: (facebookcounter/appsindex)*100
+            y: (tabcounter[10]/appsindex)*100
         }, {
 			name: 'Clash Royale',
-			y: (clashroyalecounter/appsindex)*100
+			y: (tabcounter[11]/appsindex)*100
 		}]
     }]	
 });
@@ -217,10 +301,10 @@ function Stock(counter,usern,firstnam,adres,civilit,phonen,marquep,app){
 	tab[compteur].mobileapp = app;
 	compteur++;	
 	if(civility == "monsieur"){
-	male = (monsieurcounter/compteur)*100;
-	female = 100 - male;			
+		male = (tabcounter[0]/compteur)*100;
+		female = 100 - male;			
 	}else{
-	female = (madamecounter/compteur)*100;
-	male = 100 - female;	
+		female = (tabcounter[1]/compteur)*100;
+		male = 100 - female;	
 	}
 }
